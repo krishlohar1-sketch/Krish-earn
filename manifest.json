@@ -1,10 +1,1 @@
-{
-  "name":"Krish Earn",
-  "short_name":"Krish Earn",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#07111f",
-  "theme_color":"#101827",
-  "description":"Smart rewards and earning dashboard.",
-  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
-}
+{"name":"Krish Earn","short_name":"Krish Earn","start_url":"./","display":"standalone","background_color":"#061426","theme_color":"#07162b","description":"Smart Rewards & Earning Platform","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}

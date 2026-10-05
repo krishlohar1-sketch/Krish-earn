@@ -1,43 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#6c2bd9"><meta name="description" content="Krish Earn - earn rewards, complete tasks and refer friends.">
-<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><title>Krish Earn</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07162b">
+<meta name="description" content="Krish Earn - Smart Rewards & Earning Platform">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>Krish Earn</title>
 </head>
 <body>
 <div class="app-shell">
-<header class="topbar">
-  <div class="brand"><img src="icon.svg" class="brand-logo" alt="Krish Earn"><div><b>Krish Earn</b><small>Earn • Complete • Reward</small></div></div>
-  <button class="icon-btn" onclick="showToast('You are all caught up!')">🔔</button>
+<header class="topbar glass">
+  <button class="brand" onclick="go('home')" aria-label="Krish Earn Home">
+    <img src="icon.svg" class="brand-logo" alt="Krish Earn">
+    <span><b>Krish <i>Earn</i></b><small>Smart Rewards & Earning Platform</small></span>
+  </button>
+  <div class="top-actions">
+    <button class="round-btn" onclick="openNotifications()" aria-label="Notifications">🔔<span class="notify-dot"></span></button>
+    <button class="round-btn" onclick="openMenu()" aria-label="Menu">☰</button>
+  </div>
 </header>
-<main>
+
+<main id="appMain">
 <section class="hero-poster">
-  <div class="poster-orb orb1"></div><div class="poster-orb orb2"></div><div class="poster-grid"></div>
-  <div class="poster-copy"><span class="poster-badge">✨ SMART REWARDS APP</span><h1>Earn more.<br><strong>Do more.</strong></h1><p>Complete tasks, collect rewards and invite friends — all in one simple app.</p><div class="poster-points"><span>✓ Daily rewards</span><span>✓ Easy tasks</span><span>✓ Referral bonus</span></div></div>
-  <div class="round-mark"><span>KRISH</span><strong>₹</strong><span>EARN • REWARD</span></div>
+  <div class="poster-sky"></div><div class="poster-sun"></div><div class="hill hill-a"></div><div class="hill hill-b"></div>
+  <div class="poster-copy">
+    <span class="poster-chip">KRISH EARN • REWARDS</span>
+    <h1>काम करो • कमाओ • आगे बढ़ो</h1>
+    <p>Smart rewards, simple tasks और आसान earning experience — सब एक जगह।</p>
+    <div class="poster-buttons"><button class="lime-btn" onclick="go('earn')">Start Earning ↗</button><button class="ghost-btn" onclick="go('profile')">My Profile</button></div>
+  </div>
+  <div class="coin-stack"><span>₹</span><span>₹</span><span>₹</span><div class="plant">🌱</div></div>
+  <div class="poster-badge">✨<b>Daily Rewards</b><small>Fast • Simple • Friendly</small></div>
 </section>
-<section class="balance-card">
-  <div class="balance-head"><span>Available balance</span><span class="live"><i></i> LIVE</span></div>
-  <div class="balance" id="balance">₹128.50</div>
-  <div class="hero-actions"><button class="primary" onclick="go('wallet')">Withdraw</button><button class="secondary" onclick="go('earn')">Earn now</button></div>
-  <div class="stats"><div><small>Today</small><b>₹24</b></div><div><small>Pending</small><b>₹25</b></div><div><small>Total earned</small><b>₹450</b></div></div>
+
+<section class="balance-card glass">
+  <div class="balance-head"><span>My Wallet Balance</span><button onclick="go('wallet')">View wallet ›</button></div>
+  <div class="balance-row"><strong id="balance">₹128.50</strong><span class="live">● LIVE</span></div>
+  <div class="balance-actions"><button onclick="go('earn')">💰 Earn</button><button onclick="go('withdraw')">🏦 Withdraw</button><button onclick="go('wallet')">📊 History</button></div>
 </section>
-<section class="section"><div class="section-head"><h2>⚡ Quick Earn</h2><button onclick="go('earn')">See all</button></div>
-<div class="cards">
-<button class="earn-card c1" onclick="earnDemo(5,'Daily bonus')"><span class="card-icon">🎁</span><b>Daily Bonus</b><small>Claim today</small><em>+₹5</em></button>
-<button class="earn-card c2" onclick="earnDemo(10,'Watch & earn')"><span class="card-icon">▶</span><b>Watch & Earn</b><small>Reward activity</small><em>+₹10</em></button>
-<button class="earn-card c3" onclick="earnDemo(5,'Task reward')"><span class="card-icon">✓</span><b>Tasks</b><small>Complete & earn</small><em>+₹5</em></button>
-<button class="earn-card c4" onclick="go('refer')"><span class="card-icon">↗</span><b>Refer Friends</b><small>Invite & earn</small><em>+₹10</em></button>
-</div></section>
-<section class="feature-poster"><div><span class="poster-badge small">KRISH EARN</span><h2>Simple ways to earn rewards</h2><p>Explore available activities, track your wallet and see your rewards in one place.</p></div><button class="primary" onclick="go('earn')">Explore</button></section>
-<section class="section"><div class="section-head"><h2>📊 Recent Activity</h2><button onclick="go('wallet')">View all</button></div><div class="activity">
-<div><span class="activity-icon purple">↗</span><p><b>Referral reward</b><small>Today • 10:24 AM</small></p><strong>+₹10</strong></div>
-<div><span class="activity-icon pink">🎁</span><p><b>Daily bonus</b><small>Today • 08:10 AM</small></p><strong>+₹5</strong></div>
-<div><span class="activity-icon blue">✓</span><p><b>Task reward</b><small>Yesterday</small></p><strong>+₹20</strong></div>
-</div></section>
+
+<section class="section">
+ <div class="section-head"><div><span class="eyebrow">QUICK ACCESS</span><h2>Everything you need</h2></div><button class="text-btn" onclick="openAllFeatures()">All features ›</button></div>
+ <div class="feature-grid">
+  <button class="feature-card green" onclick="claimDaily()"><span class="feature-icon">🎁</span><b>Daily Reward</b><small>Check-in & claim</small><em>+₹5</em></button>
+  <button class="feature-card blue" onclick="go('tasks')"><span class="feature-icon">📋</span><b>Tasks</b><small>Complete & earn</small><em>+₹5–20</em></button>
+  <button class="feature-card purple" onclick="go('refer')"><span class="feature-icon">👥</span><b>Refer & Earn</b><small>Invite friends</small><em>₹10+</em></button>
+  <button class="feature-card orange" onclick="go('wallet')"><span class="feature-icon">👛</span><b>Wallet</b><small>Balance & history</small><em>Open ›</em></button>
+  <button class="feature-card cyan" onclick="go('withdraw')"><span class="feature-icon">🏦</span><b>Withdraw</b><small>Bank transfer</small><em>₹100+</em></button>
+  <button class="feature-card pink" onclick="go('profile')"><span class="feature-icon">👤</span><b>Profile</b><small>Login & account</small><em>Open ›</em></button>
+ </div>
+</section>
+
+<section class="info-poster glass">
+ <div><span class="poster-chip mini">KRISH EARN</span><h2>छोटे-छोटे काम, बड़ी कमाई का मौका!</h2><p>Daily rewards • Tasks • Refer & Earn • Wallet • Withdraw</p></div>
+ <button class="lime-btn" onclick="openAbout()">Know More</button>
+</section>
+
+<section class="section">
+ <div class="section-head"><div><span class="eyebrow">POPULAR</span><h2>Top earning options</h2></div><button class="text-btn" onclick="go('tasks')">See all ›</button></div>
+ <div class="offer-list">
+  <button class="offer-card glass" onclick="runTask('Daily Check-in',5)"><span>🎁</span><div><b>Daily Check-in</b><small>Claim your daily reward</small></div><strong>+₹5</strong></button>
+  <button class="offer-card glass" onclick="runTask('Quick Task',10)"><span>⚡</span><div><b>Quick Tasks</b><small>Complete simple activities</small></div><strong>+₹10</strong></button>
+  <button class="offer-card glass" onclick="go('refer')"><span>🤝</span><div><b>Refer & Earn</b><small>Invite eligible friends</small></div><strong>+₹10</strong></button>
+ </div>
+</section>
+
+<section class="trust-row">
+ <div>🛡️<b>Secure</b><small>Private account</small></div><div>⚡<b>Fast</b><small>Easy actions</small></div><div>⭐<b>Reliable</b><small>Simple UI</small></div><div>💚<b>For Everyone</b><small>Mobile friendly</small></div>
+</section>
+
+<section class="section activity-section">
+ <div class="section-head"><div><span class="eyebrow">ACTIVITY</span><h2>Recent activity</h2></div><button class="text-btn" onclick="go('wallet')">View all ›</button></div>
+ <div id="activityList" class="activity glass"></div>
+</section>
 </main>
-<nav class="bottom-nav"><button class="active" data-page="home" onclick="go('home')"><span>⌂</span><small>Home</small></button><button data-page="earn" onclick="go('earn')"><span>✦</span><small>Earn</small></button><button data-page="refer" onclick="go('refer')"><span>↗</span><small>Refer</small></button><button data-page="wallet" onclick="go('wallet')"><span>◈</span><small>Wallet</small></button><button data-page="profile" onclick="go('profile')"><span>◉</span><small>Profile</small></button></nav>
-</div>
-<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div><div class="toast" id="toast"></div><script src="app.js"></script>
-</body></html>
+
+<nav class="bottom-nav glass">
+ <button class="active" data-page="home" onclick="go('home')"><span>⌂</span><small>Home</small></button>
+ <button data-page="earn" onclick="go('earn')"><span>✦</span><small>Earn</small></button>
+ <button data-page="refer" onclick="go('refer')"><span>♧</span><small>Refer</small></button>
+ <button data-page="wallet" onclick="go('wallet')"><span>◈</span><small>Wallet</small></button>
+ <button data-page="profile" onclick="go('profile')"><span>◉</span><small>Profile</small></button>
+</nav>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal-box glass"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
