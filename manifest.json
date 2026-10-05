@@ -1,17 +1,10 @@
 {
-  "name": "Krish Earn",
-  "short_name": "Krish Earn",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#070b20",
-  "theme_color": "#151d50",
-  "description": "Krish Earn - colorful rewards, tasks, referrals and wallet dashboard.",
-  "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
+  "name":"Krish Earn",
+  "short_name":"Krish Earn",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#07111f",
+  "theme_color":"#101827",
+  "description":"Smart rewards and earning dashboard.",
+  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
