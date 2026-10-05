@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827"><title>Krish Earn • Admin</title><link rel="stylesheet" href="admin.css"></head>
+<body>
+<div class="wrap">
+<header class="glass top"><div><b>Krish Earn</b><small>Admin Control Center</small></div><span>● Secure demo</span></header>
+<section class="grid">
+<div class="glass stat"><small>Total users</small><b>12,540</b><span>+8.2%</span></div>
+<div class="glass stat"><small>Active users</small><b>4,230</b><span>Today</span></div>
+<div class="glass stat"><small>Pending withdrawals</small><b>₹8,450</b><span>Review</span></div>
+<div class="glass stat"><small>Reward pool</small><b>₹82,450</b><span>This month</span></div>
+</section>
+<section class="glass panel"><div class="head"><h2>Withdrawal requests</h2><button onclick="toast('Demo data refreshed')">Refresh</button></div>
+<div class="row"><b>User102</b><span>₹250 • UPI</span><button onclick="toast('Marked as approved in demo')">Approve</button><button class="danger" onclick="toast('Marked as rejected in demo')">Reject</button></div>
+<div class="row"><b>Krish458</b><span>₹500 • Bank</span><button onclick="toast('Marked as approved in demo')">Approve</button><button class="danger" onclick="toast('Marked as rejected in demo')">Reject</button></div>
+</section>
+<section class="glass panel"><div class="head"><h2>Manage earning tasks</h2><button onclick="newTask()">+ New task</button></div>
+<div class="row"><b>Daily Bonus</b><span>₹5 • Active</span><button onclick="toast('Task settings opened')">Edit</button></div>
+<div class="row"><b>Survey Task</b><span>₹5 • Active</span><button onclick="toast('Task settings opened')">Edit</button></div>
+<div class="row"><b>Rewarded Activity</b><span>₹10 • Active</span><button onclick="toast('Task settings opened')">Edit</button></div>
+</section>
+<section class="glass panel"><h2>Quick settings</h2><div class="settings">
+<label>Minimum withdrawal <input value="100"></label>
+<label>Referral reward <input value="10"></label>
+<label>Daily ad limit <input value="10"></label>
+<label>Maintenance mode <select><option>Off</option><option>On</option></select></label>
+</div><button class="save" onclick="toast('Settings saved in demo')">Save settings</button></section>
+</div><div id="toast"></div><script src="admin.js"></script></body></html>

@@ -1,0 +1,1 @@
+function toast(x){let t=document.getElementById('toast');t.textContent=x;t.classList.add('show');clearTimeout(window.t);window.t=setTimeout(()=>t.classList.remove('show'),1800)}function newTask(){toast('New task form opened in demo')}
